@@ -1,0 +1,94 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'src/styles.css' %}" rel="stylesheet">
+</head>
+<body style="margin: 0; padding: 0; height: 100%; background-color: black;">
+        <img class="absolute h-screen w-screen" src="{% static 'image/stranger-things-cast-pictures.jpg' %}" alt="">
+         <div class=" h-[80px] w-screen flex flex-wrap">
+            <img class=" absolute h-[80px] w-[120px] ml-16" src="{% static 'image/netbg.png' %}" alt="">
+            
+            <div class="absolute top-8 left-48">
+                <button class="text-white ml-6">Home</button>
+                <button  class="text-white ml-6">TV Shows</button>
+                <button  class="text-white ml-6">Movies</button>
+                <button  class="text-white ml-6">Latest</button>
+                <button  class="text-white ml-6">My List</button>
+                <button  class="text-white ml-6">Browse by Language</button>
+
+                <button class=" absolute gap-10 flex -bottom-2 left-[600px]">
+                    <img class="h-7 w-10 ml-[300px] mt-7" src="{% static 'image/search-01-stroke-rounded (1).svg' %}" alt="">
+                    <img class="h-7 w-10  mt-7" src="{% static 'image/notification-03-stroke-rounded.svg' %}" alt="">
+                    <img class="h-9 w-10  mt-7" src="{% static 'image/profilen.jpg' %}" alt="">
+                </button>
+
+        <!-- <a href="{% url 'signup' %}" class="h-10 w-24 rounded-lg bg-red-700 ml-5  text-white">Signup</a>
+        <a href="{% url 'login' %}" class="h-10 w-24 rounded-lg bg-green-600 text-white ">Login</a> -->
+            </div>
+            
+        </div>
+        
+        <div>
+            <button class=" h-8 w-20  flex justify-center absolute bg-black bg-opacity-40 text-white mt-96 ml-20 hover:bg-black font-bold ">
+                <img src="{% static 'image/play-stroke-rounded.svg' %}" alt="">Play
+            </button>
+
+            <button class=" h-8 w-36  flex justify-center absolute bg-black bg-opacity-40 text-white mt-96 ml-52 hover:bg-black font-bold ">
+                <img src="{% static 'image\alert-circle-stroke-rounded.svg' %}" alt="">More Info
+            </button>
+        </div>
+        <div class="flex flex-wrap absolute">
+            <h1 class=" mt-[430px] top-[400px] ml-10 text-white font-extrabold text-3xl">Continuous Watching for Jyoti</h1>
+            <div class="flex gap-1 absolute top-[490px] left-6">   
+                <div class="h-[150px] w-[200px]">
+                    <img src="{% static 'image/squid.jpg' %}" alt="">
+                </div>
+                <div class="h-[80px] w-[140px]">
+                    <img src="{% static 'image/wed.jpg' %}" alt="">
+                </div>
+                <div class="h-[100px] w-[200px]">
+                    <img src="{% static 'image/squid.jpg' %}" alt="">
+                </div>
+                <div class="h-[100px] w-[200px]">
+                    <img src="{% static 'image/all of.jpg' %}" alt="">
+                </div>
+                <div class="h-[100px] w-[200px]">
+                    <img src="{% static 'image/img.jpg' %}" alt="">
+                </div>
+                <div class="h-[800px] w-[400px]">
+                    <img src="{% static 'image/startup.jpg' %}" alt="">
+                </div>
+            </div>
+
+            <div class="flex flex-wrap absolute">
+                <h1 class="mt-[630px] top-[600px] ml-10 text-white font-extrabold text-3xl">Because You watched snap</h1>
+                <div class="flex gap-1 absolute mt-[680px] left-6">   
+                    <div class="h-[150px] w-[200px]">
+                        <img src="{% static 'image/squid.jpg' %}" alt="">
+                    </div>
+                    <div class="h-[80px] w-[140px]">
+                        <img src="{% static 'image/wed.jpg' %}" alt="">
+                    </div>
+                    <div class="h-[100px] w-[200px]">
+                        <img src="{% static 'image/squid.jpg' %}" alt="">
+                    </div>
+                    <div class="h-[100px] w-[200px]">
+                        <img src="{% static 'image/all of.jpg' %}" alt="">
+                    </div>
+                    <div class="h-[100px] w-[200px]">
+                        <img src="{% static 'image/img.jpg' %}" alt="">
+                    </div>
+                    <div class="h-[800px] w-[400px]">
+                        <img src="{% static 'image/startup.jpg' %}" alt="">
+                    </div>
+                    
+                </div>
+            </div>
+    </div> 
+</body>
+</html>
