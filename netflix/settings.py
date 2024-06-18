@@ -134,3 +134,10 @@ MESSAGE_TAGS = {
     messages.WARNING: "bg-yellow-500",
     
 }
+
+EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_USE_TLS=True
+EMAIL_PORT=587
+EMAIL_HOST_USER='minraj.191522@ncit.edu.np'
+EMAIL_HOST_PASSWORD='taov yumh hcnc ikgs'
