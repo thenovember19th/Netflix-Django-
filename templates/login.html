@@ -13,7 +13,7 @@
     </style>
 </head>
 <body class="bg-custom bg-cover bg-center flex justify-center" >
-    {% for message im messages %}
+   
     <div id="alertbox" class="h-24 w-screen bg-red-500 z-10 text-center text-white">{{message}}</div>
     <div id="'alertbox" class="h-24 w-screen "></div>
     <div class="h-[400px] w-[300px] absolute top-10 items-center justify-center bg-black bg-opacity-60 ">
@@ -27,6 +27,6 @@
         </form>
         <a href="{% url 'forgot_password' %}"><p class="underline text-white text-center mt-4">Forgot Password?</p></a>
     </div>
-    {% end for %}
+  
 </body>
 </html>

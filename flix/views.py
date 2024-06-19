@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect,HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
+import uuid
+from .models import PasswordResetToken
+from .sendmail import send_forgot_password_mail
 # Create your views here.
 
 def home(request):
@@ -38,10 +41,23 @@ def handleLogin(request):
     return render(request,'login.html')
 
 def forgot_password(request):
+    if request.method=='POST':
+        username=request.POST.get('username')
+        if not User.objects.filter(username=username).exists():
+            messages.error(request,'username doesnot exist')
+            return redirect('forgot_password')
+        else:
+            user_obj=User.objects.get(username=username)
+            token=str(uuid.uuid4())
+            PasswordResetToken.objects.create(user=user_obj,token=token)
+            send_forgot_password_mail(user_obj.email,token)
+            messages.success(request, "Your password reset link has been sent to email")
+
     return render(request,'forgot_password.html')
 
 
-def change_password(request):
+def change_password(request,token):
+
     return render(request, 'change_password.html')
 
 

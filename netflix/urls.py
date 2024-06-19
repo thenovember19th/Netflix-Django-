@@ -9,5 +9,5 @@ urlpatterns = [
     path('home/',views.home,name='home'),
     path('login/',views.handleLogin,name='login'),
     path('forgot_password/',views.forgot_password,name='forgot_password'),
-    path('change_password/',views.change_password,name='change_password'),
+    path('change_password/<str:token>/',views.change_password,name='change_password'),
 ]
