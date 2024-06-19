@@ -57,7 +57,20 @@ def forgot_password(request):
 
 
 def change_password(request,token):
-
+    reset_token = PasswordResetToken.objects.get(token=token)
+    if request.method =='POST':
+        new_password=request.POST.get('pass1')
+        confirm_password=request.POST.get('pass2')
+        if new_password!=confirm_password:
+            messages.error(request,'Password does not match')
+            return render(request,'change_password.html',{'token':token})
+            
+        user = reset_token.user
+        user.set_password(new_password)
+        user.save()
+        reset_token.delete()
+        messages.success(request, 'Password has been reset successfully')
+        return redirect('login')
     return render(request, 'change_password.html')
 
 
