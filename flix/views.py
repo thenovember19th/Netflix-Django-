@@ -5,10 +5,12 @@ from django.contrib import messages
 import uuid
 from .models import PasswordResetToken
 from .sendmail import send_forgot_password_mail
+from .models import Movie
 # Create your views here.
 
 def home(request):
-    return render(request, 'home.html')
+    movies = Movie.objects.all()
+    return render(request, 'home.html',{'movies':movies})
 
 def signUp(request):
     if request.method=="POST":
@@ -72,5 +74,4 @@ def change_password(request,token):
         messages.success(request, 'Password has been reset successfully')
         return redirect('login')
     return render(request, 'change_password.html')
-
 

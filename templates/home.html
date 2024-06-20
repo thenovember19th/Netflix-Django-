@@ -12,6 +12,24 @@
         <img class="absolute h-screen w-screen" src="{% static 'image/stranger-things-cast-pictures.jpg' %}" alt="">
          <div class=" h-[80px] w-screen flex flex-wrap">
             <img class=" absolute h-[80px] w-[120px] ml-16" src="{% static 'image/netbg.png' %}" alt="">
+
+            <!-- django alert messages -->
+    {% for message in messages %}
+    <div id="alertbox" class="h-12 w-screen {{message.tags}} flex items-center justify-center">
+        <div class="text-white text-center"> <span class="font-bold">Message</span>:{{message}} </div>
+        <button class="absolute right-4" onclick="closerAlert()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
+          <path d="M15 9L9 14.9996M15 15L9 9.00039" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z" stroke="currentColor" stroke-width="1.5" />
+      </svg>
+    </button>
+      </div>
+      {% endfor %}
+    <script>
+        function closerAlert(){
+            let alert_message=document.getElementById('alertbox')
+            alert_message.classList.add('hidden')
+        }
+    </script>
             
             <div class="absolute top-8 left-48">
                 <button class="text-white ml-6">Home</button>
@@ -45,23 +63,14 @@
         <div class="flex flex-wrap absolute">
             <h1 class=" mt-[430px] top-[400px] ml-10 text-white font-extrabold text-3xl">Continuous Watching for Jyoti</h1>
             <div class="flex gap-1 absolute top-[490px] left-6">   
-                <div class="h-[150px] w-[200px]">
-                    <img src="{% static 'image/squid.jpg' %}" alt="">
-                </div>
-                <div class="h-[80px] w-[140px]">
-                    <img src="{% static 'image/wed.jpg' %}" alt="">
-                </div>
-                <div class="h-[100px] w-[200px]">
-                    <img src="{% static 'image/squid.jpg' %}" alt="">
-                </div>
-                <div class="h-[100px] w-[200px]">
-                    <img src="{% static 'image/all of.jpg' %}" alt="">
-                </div>
-                <div class="h-[100px] w-[200px]">
-                    <img src="{% static 'image/img.jpg' %}" alt="">
-                </div>
-                <div class="h-[800px] w-[400px]">
-                    <img src="{% static 'image/startup.jpg' %}" alt="">
+                <div class="flex gap-1 absolute top-[490px] left-6">
+                    {% for movie in movies %}
+                    <div class="h-[150px] w-[200px] cursor-pointer">
+                        <img src="{{movie.flyer.url}}" alt="">
+
+
+                    </div>
+                        {% endfor %}
                 </div>
             </div>
 
