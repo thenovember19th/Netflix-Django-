@@ -42,7 +42,7 @@
                 <button class=" absolute gap-10 flex -bottom-2 left-[600px]">
                     <img class="h-7 w-10 ml-[300px] mt-7" src="{% static 'image/search-01-stroke-rounded (1).svg' %}" alt="">
                     <img class="h-7 w-10  mt-7" src="{% static 'image/notification-03-stroke-rounded.svg' %}" alt="">
-                    <img class="h-9 w-10  mt-7" src="{% static 'image/profilen.jpg' %}" alt="">
+                    <!-- <img class="h-9 w-10  mt-7" src="{% static 'image/profilen.jpg' %}" alt=""> -->
                 </button>
 
         <!-- <a href="{% url 'signup' %}" class="h-10 w-24 rounded-lg bg-red-700 ml-5  text-white">Signup</a>
@@ -61,19 +61,19 @@
             </button>
         </div>
         <div class="flex flex-wrap absolute">
-            <h1 class=" mt-[430px] top-[400px] ml-10 text-white font-extrabold text-3xl">Continuous Watching for Jyoti</h1>
+            <h1 class=" mt-[430px] top-[400px] ml-10 text-white font-extrabold text-3xl">Continuous Watching for Minraj</h1>
             <div class="flex gap-1 absolute top-[490px] left-6">   
                 <div class="flex gap-1 absolute top-[490px] left-6">
                     {% for movie in movies %}
                     <div class="h-[150px] w-[200px] cursor-pointer">
-                        <img src="{{movie.flyer.url}}" alt="">
+                        <img class="cursor-pointer" src="{{movie.flyer.url}}" alt="">
 
 
                     </div>
                         {% endfor %}
                 </div>
             </div>
-
+                <input class="bg-green-400 z-20" type="text" placeholder="Search movies">
             <div class="flex flex-wrap absolute">
                 <h1 class="mt-[630px] top-[600px] ml-10 text-white font-extrabold text-3xl">Because You watched snap</h1>
                 <div class="flex gap-1 absolute mt-[680px] left-6">   

@@ -24,7 +24,8 @@ def signUp(request):
         user.first_name=fname
         user.last_name=lname
         user.save()
-        return redirect('login')
+        return redirect('subscription')
+        # return redirect('login')
     return render(request,'signup.html')
 
 def handleLogin(request):
@@ -41,6 +42,27 @@ def handleLogin(request):
             return redirect('login')
     
     return render(request,'login.html')
+
+
+def subscription_plan(request):
+    
+    
+    return render(request,'subscription.html')
+
+def handle_payment(request):
+    if request.method == "POST":
+        if 'basic' in request.POST:
+            price=999
+           
+            
+        if 'standard' in request.POST:
+            price=1999
+            
+            
+        if 'premium' in request.POST:
+            price=2499
+           
+    return render(request,'payment.html',{'price':price})
 
 def forgot_password(request):
     if request.method=='POST':
@@ -74,4 +96,4 @@ def change_password(request,token):
         messages.success(request, 'Password has been reset successfully')
         return redirect('login')
     return render(request, 'change_password.html')
-
+    
