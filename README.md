@@ -12,6 +12,16 @@ This is a Django-based Netflix clone that utilizes html and tailwind css for use
 - Easy setup and configuration
 
 
+![Screenshot (27)](https://github.com/thenovember19th/Netflix-Django-/assets/97221801/556740bc-da5c-4e15-bffb-e5a8c3fac86f)
+
+
+![Screenshot (28)](https://github.com/thenovember19th/Netflix-Django-/assets/97221801/9dc0c4a3-f902-465d-954f-023fbb9cbd45)
+
+
+![Screenshot (29)](https://github.com/thenovember19th/Netflix-Django-/assets/97221801/e32467b0-c487-43dc-9c8a-937f7768da02)
+
+
+
 ## Usage
 
 ### Admin Panel
